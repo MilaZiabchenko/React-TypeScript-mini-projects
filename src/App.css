@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+:root {
+  --light-blue-clr: hsl(190, 95%, 87.5%);
+  --light-blue-text: hsl(190, 95%, 97.5%);
+  --dark-green-35: hsl(90, 95%, 35%);
+  --vivid-green-65: hsl(90, 95%, 65%);
+  --vivid-green-70: hsl(90, 95%, 70%);
+  --light-green-clr: hsl(90, 95%, 97.5%);
+  --summer-yellow-clr: hsl(65, 95%, 65%);
+  --background-15: hsl(220, 12%, 15%);
+  --background-17: hsl(220, 12%, 17%);
+  --background-20: hsl(220, 12%, 20%);
+  --background-25: hsl(220, 12%, 25%);
+}
+
+::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--background-15);
+  border-radius: 100vw;
+  margin-block: 0.25rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--background-20);
+  border: 0.05rem solid var(--background-15);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--background-25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Nunito', sans-serif;
+  font-size: calc(10px + 2vmin);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+body:has(.dark-theme) {
+  background-color: var(--background-15);
+  color: var(--light-green-clr);
+  font-weight: 500;
+}
+
+body:has(.light-theme) {
+  background-color: var(--light-green-clr);
+  color: var(--background-15);
+  font-weight: 600;
+}
+
+.home-button,
+.theme-toggler {
+  margin: 1.5rem 0.75rem;
+}
+
+.theme-wrapper:has(.modal, .error-page, .loading-page)
+  :is(.home-button, .theme-toggler) {
+  display: none;
+}
+
+.theme-wrapper:has(.modal) :is(h2, p) {
+  color: var(--light-green-clr);
+}
+
+.theme-wrapper:has(.modal) h2 span {
+  color: var(--light-blue-clr);
+}
+
+:is(h1, h2, h3, h4) span,
+li {
+  color: var(--light-blue-clr);
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+  padding: 1.25rem;
+}
+
+li {
+  padding: 0.25rem;
+  margin-bottom: 0.5rem;
+  list-style-type: none;
+  font-size: 1.275rem;
+}
+
+button {
+  margin: 2rem 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  border: 2px solid currentColor;
+  background-color: var(--background-17);
+  color: var(--light-green-clr);
+  font-size: 1.25rem;
+  text-shadow: 0 0 0.1rem currentColor;
+  box-shadow: inset 0 0 0.25rem 0 currentColor, 0 0 0.75rem 0 currentColor;
+  outline-color: currentColor;
+  user-select: none;
+  cursor: pointer;
+}
+
+button:has(i) {
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+button:hover {
+  background-color: var(--background-20);
+}
+
+img {
+  display: block;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+hr {
+  width: 300px;
+  margin: 0 auto;
+  border: 1px dotted hsla(90, 95%, 95%, 0.5);
+}
+
+a {
+  color: var(--vivid-green-65);
+  font-size: calc(8px + 2vmin);
+  text-underline-offset: 0.5rem;
+}
+
+.home-button a {
+  color: var(--light-green-clr);
+}
+
+.authorized,
+.loading {
+  color: var(--vivid-green-70);
+}
+
+.green-background {
+  background-color: hsla(90, 95%, 35%, 0.35);
+}
+
+.gradient-background {
+  background: linear-gradient(
+    to bottom,
+    var(--light-blue-text),
+    var(--light-green-clr),
+    var(--light-green-clr)
+  );
+}
+
+.text-gradient {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--summer-yellow-clr),
+    var(--vivid-green-65),
+    var(--vivid-green-70),
+    var(--summer-yellow-clr),
+    var(--vivid-green-65),
+    var(--vivid-green-70),
+    var(--summer-yellow-clr),
+    var(--vivid-green-65),
+    var(--vivid-green-70),
+    var(--summer-yellow-clr)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer {
+  padding-block: 3.5rem 1.5rem;
+}
+
+.dark-theme:has(.nav-links, .lift) :is(button:has(i), .home-button a) {
+  color: var(--summer-yellow-clr);
+}
+
+.light-theme
+  :is(
+    h1,
+    div > *:not(button, dt, dd),
+    span:not(.trees, .modal span, .tracker-heading span)
+  ) {
+  color: var(--dark-green-35);
+}
+
+.light-theme
+  :is(
+    h2:not(.lift-name, .modal h2),
+    h3:not(.card-grid h3, .tracker-heading),
+    h4:not(.accordion-item h4),
+    li:not(.lift li),
+    p:not(.modal p)
+  ) {
+  color: var(--background-15);
+}
+
+.light-theme button:not(.modal-button) {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.light-theme .accordion-item {
+  border-bottom: 2px dotted var(--dark-green-35);
+}
+
+.light-theme .lift {
+  font-weight: 500;
+}
+
+.light-theme .user {
+  border: 2px solid var(--dark-green-35);
+}
+
+.light-theme :is(.authorized, .loading) {
+  color: var(--dark-green-35);
+}
+

@@ -1,0 +1,24 @@
+.nav-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(300px + 10vw);
+  height: calc(3.5rem + 6vmin);
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 2px dotted hsla(190, 95%, 95%, 0.62);
+  background-color: var(--background-20);
+  color: var(--light-blue-text);
+  font-size: calc(12px + 1.5vmin);
+  text-decoration: none;
+}
+
+.light-theme .nav-links a {
+  color: var(--vivid-green-70);
+  border-color: var(--vivid-green-70);
+}
+
+.nav-links a:hover {
+  background-color: var(--background-25);
+}
