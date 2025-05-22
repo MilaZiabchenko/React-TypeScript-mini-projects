@@ -4,11 +4,11 @@ import { fetchData } from '../../utils/fetchData';
 
 const activitiesAndUsersLoader = async () => {
   const initialUniqueActivities = await Promise.all<Promise<Activity>[]>([
-    fetchData('http://bored.api.lewagon.com/api/activity/'),
-    fetchData('http://bored.api.lewagon.com/api/activity/'),
-    fetchData('http://bored.api.lewagon.com/api/activity/'),
-    fetchData('http://bored.api.lewagon.com/api/activity/'),
-    fetchData('http://bored.api.lewagon.com/api/activity/')
+    fetchData('https://bored.api.lewagon.com/api/activity/'),
+    fetchData('https://bored.api.lewagon.com/api/activity/'),
+    fetchData('https://bored.api.lewagon.com/api/activity/'),
+    fetchData('https://bored.api.lewagon.com/api/activity/'),
+    fetchData('https://bored.api.lewagon.com/api/activity/')
   ])
     .then(activities => [
       ...new Map(
