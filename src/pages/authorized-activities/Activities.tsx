@@ -34,7 +34,7 @@ const Activities = () => {
   const loadActivity = async () => {
     try {
       const data = await fetchData<Activity>(
-        'https://www.boredapi.com/api/activity'
+        'https://bored.api.lewagon.com/api/activity'
       );
 
       if (activities && data.activity) {
